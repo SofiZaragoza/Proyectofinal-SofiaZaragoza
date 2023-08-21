@@ -1,0 +1,33 @@
+{
+    "past2023": [{
+            "month": "January",
+            "income": 900,
+            "expenses": "300$",
+            "budget": "600$"
+        },
+        {
+            "month": "February",
+            "income": 1000,
+            "expenses": "500$",
+            "budget": "500$"
+        },
+        {
+            "month": "March",
+            "income": 1500,
+            "expenses": "500$",
+            "budget": "1000$"
+        },
+        {
+            "month": "April",
+            "income": 1100,
+            "expenses": "500$",
+            "budget": "600$"
+        },
+        {
+            "month": "May",
+            "income": 2000,
+            "expenses": "500$",
+            "budget": "1500$"
+        }
+    ]
+}

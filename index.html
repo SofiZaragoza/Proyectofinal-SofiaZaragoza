@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Form</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <head>
+        <title>Heading Spaces</title>
+        <style>
+            /* Add margin between h1 and h2 */
+            h1 + h2 {
+                margin-top: 30px;
+            }
+    
+            /* Add margin between h2 and h3 */
+            h2 + h3 {
+                margin-top: 30px;
+            }
+    
+            /* Add margin between h3 and h4 */
+            h3 + h4 {
+                margin-top: 15px;
+            }
+            
+
+        </style>
+
+        <title>Income with Grey Box</title>
+        <style>
+            h2#income {
+                background-color: #f2f2f2; /* Grey background color */
+                padding: 10px; /* Add padding to create space inside the box */
+                border-radius: 5px;
+            }
+            #totalbudget-container {
+            position: absolute;
+            top: 130px;
+            right: 300px;
+            background-color: #f2f2f2;
+            padding: 5px 10px;
+            border: 1px solid #a9a5a5;
+            border-radius: 5px;
+            }
+            #incomeLabel {
+                display: inline-block;
+                vertical-align: middle;
+            }
+        </style>
+        <title>Income with Grey Box</title>
+        <style>
+        .income-box {
+        
+            padding-bottom: 0px;
+            padding-top: 0px;
+            padding-left: 3px;
+            background-color: #dbd4d4; /* Grey background color */
+            border: 1px solid #a9a5a5;
+            border-radius: 5px;
+            width: 200px;
+            height: 30px;
+            }
+            #incomeinput {
+                margin-left: 0px; /* Adjust this value as needed */
+            }
+        </style>
+
+    <title>delete button </title>
+    <style>
+    .delete-box {
+
+    padding-bottom: 0px;
+    padding-top: 0px;
+    padding-left: 3px;
+    background-color: #e95353; /* Grey background color */
+    border: 1px solid #d85454;
+    border-radius: 5px;
+    width: 200px;
+    height: 30px;
+    }
+</style>
+
+    </head>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Expense Tracker</h1>
+        <br>
+        <h2>Total Income</h2> 
+        <form id="incomeform">
+        <label for="ingresos" id="incomeLabel">
+            <input type="text" id="incomeinput" name="incomeinput" placeholder="$$">
+        </label>
+        <button type="submit" id="submitincome" onclick="submitIncome()">Submit</button>
+        </form>
+        <br>
+        <!-- aca va la tabla del carrito<h3>Total Income:</h3> 
+        <div class="income-box" id="incomeValue"></div>
+        <p id="incomeValue"></p>
+        <br>-->
+        <br>
+        <h2>Expense Form</h2>
+        <form id="expenseForm">
+            <div class="form-group">
+                <label for="userName">Your full name:</label>
+                <input type="text" class="form-control" id="userName" name="userName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="expenseName">Expense Name:</label>
+                <input type="text" class="form-control" id="expenseName" name="expenseName" required>
+            </div>
+
+             <div class="form-group">
+                <label for="expenseType">Expense Type:</label>
+                <select class="form-control" id="expenseType" name="expenseType" required>
+                    <option value="">Select Type</option>
+                    <option value="food">Food</option>
+                    <option value="travel">Travel</option>
+                    <option value="utilities">Utilities</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="expenseAmount">Expense Amount:</label>
+                <input type="text" class="form-control" id="expenseAmount" name="expenseAmount" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <br>
+        <h4>Month expenses </h4>
+        <table class = "table table - striped">
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>Expense Name</th>
+                    <th>Type</th>
+                <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody id="tablaexpense">
+                <!-- aca va la tabla del carrito-->
+            </tbody>
+        </table>
+        <br>
+        <h5 id="totalexpensemonth" placeholder="$$" > Total Expense:</h5>
+        <br>
+        <div id="totalbudget-container">
+        <h5 id="totalbudget"> Current Budget: $</h5>
+        </div>
+        <br>
+        <div id="delete-box"> 
+        <button class="delete-box" id="deleteData">Delete Data</button>
+        </div>
+        <br>
+        <br>
+        <h4> Past months</h4>
+        <section>
+            <table class="table table - striped">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Total Expenses</th>
+                        <th>Budget</th>
+                    </tr>
+                </thead>
+                <tbody id="past2023">
+                    <!-- aca ingresan los datos del json de los meses -->
+                </tbody>
+            </table>
+        </section>
+
+    </div>
+        <!-- JavaScript Bundle with Popper Boostrap siempre va arriba del js.-->
+        <script src= https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js integridad=”sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q” crossorigin=”anónimo”> </script>
+       <!-- Include SweetAlert CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+
+        <!-- Include SweetAlert JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+
+         <!-- JavaScript connection -->
+        <script src="budget.js"></script>
+</body>
+ 
+</html>
